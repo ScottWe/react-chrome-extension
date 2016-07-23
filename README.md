@@ -2,8 +2,7 @@
 
 ## Overview
 This project is a test for creating a React-base Chrome extension.
-The finished application will be a simple calculator.
-The assembly of this extension will be automated with webpack.
+The assembly of this extension is automated by webpack.
 
 ## Setup
 Before running this project, ensure that npm and webpack are installed.
@@ -23,3 +22,5 @@ To orchestrate a build, run,
 webpack
 ```
 from within the base directory.
+
+This will produce a transpiled Chrome extension in ./bin.
