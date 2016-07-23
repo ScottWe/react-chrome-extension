@@ -25,5 +25,9 @@
     "copy-webpack-plugin": "~3.0.1",
     "sass-loader": "~4.0.0",
     "node-sass": "~3.8.0"
+  },
+  "dependencies": {
+    "react-dom": "~15.2.1",
+    "react": "~15.2.1"
   }
 }
