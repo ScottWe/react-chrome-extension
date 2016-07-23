@@ -10,7 +10,7 @@ build/
 coverage/
 .module-cache
 *.gem
-build
+bin
 docs/.bundle
 docs/code
 docs/_site
