@@ -34,7 +34,7 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			title: "Popup",
 			filename: "popup.html",
-			template: path.resolve(, "popup.html")
+			template: path.resolve(baseSrcPath, "popup.html")
 		}),
 		new CopyWebpackPlugin([
 				{
