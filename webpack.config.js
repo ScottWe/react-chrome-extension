@@ -5,24 +5,25 @@ const path = require('path');
 
 // Variable presets
 const baseSrcPath = path.resolve(__dirname, 'src');
+const baseBinPath = path.resolve(__dirname, 'bin');
 
 // Configurations
 module.exports = {
-	entry: path.resolve(__dirname, 'src/index.js'),
+	entry: path.resolve(baseSrcPath, 'index.js'),
 	output: {
-		path: path.resolve(__dirname, 'bin'),
+		path: baseBinPath,
 		filename: 'extension.bundle.js'
 	},
 	devtool: "source-map",
 	module: {
 		loaders: [{
-			test: /\.js(x)?/,
+			test: /\.js(x)?$/,
 			include: [
 				baseSrcPath
 			],
 			loader: "babel-loader"
 		}, {
-			test: /\.((scss)|(css))/,
+			test: /\.((scss)|(css))$/,
 			include: [
 				baseSrcPath
 			],
@@ -33,16 +34,16 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			title: "Popup",
 			filename: "popup.html",
-			template: path.resolve(__dirname, "src/popup.html")
+			template: path.resolve(, "popup.html")
 		}),
 		new CopyWebpackPlugin([
 				{
-					from: path.resolve(__dirname, "src/manifest.json"),
-					to: path.resolve(__dirname, "bin/manifest.json")
+					from: path.resolve(baseSrcPath, "manifest.json"),
+					to: path.resolve(baseBinPath, "manifest.json")
 				},
 				{
-					from: path.resolve(__dirname, "src/icon.png"),
-					to: path.resolve(__dirname, "bin/icon.png")
+					from: path.resolve(baseSrcPath, "icon.png"),
+					to: path.resolve(baseBinPath, "icon.png")
 				}
 			], {
 			copyUnmodified: true
