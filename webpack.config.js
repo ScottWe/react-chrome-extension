@@ -1,7 +1,12 @@
+// External dependencies
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 
+// Variable presets
+const baseSrcPath = path.resolve(__dirname, 'src');
+
+// Configurations
 module.exports = {
 	entry: path.resolve(__dirname, 'src/index.js'),
 	output: {
@@ -13,9 +18,15 @@ module.exports = {
 		loaders: [{
 			test: /\.js(x)?/,
 			include: [
-				path.resolve(__dirname, 'src')
+				baseSrcPath
 			],
 			loader: "babel-loader"
+		}, {
+			test: /\.((scss)|(css))/,
+			include: [
+				baseSrcPath
+			],
+			loaders: ["style", "css", "sass"]
 		}]
 	},
 	plugins: [
