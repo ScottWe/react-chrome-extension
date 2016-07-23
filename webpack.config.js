@@ -27,6 +27,10 @@ module.exports = {
 				{
 					from: path.resolve(__dirname, "src/manifest.json"),
 					to: path.resolve(__dirname, "bin/manifest.json")
+				},
+				{
+					from: path.resolve(__dirname, "src/icon.png"),
+					to: path.resolve(__dirname, "bin/icon.png")
 				}
 			], {
 			copyUnmodified: true
